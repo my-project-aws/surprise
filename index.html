@@ -11,10 +11,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('https://raw.githubusercontent.com/my-project-aws/surprise/main/hearts.webp'); /* Replace with the URL of the uploaded heart pattern image */
-    background-size: cover; /* Cover the entire screen */
-    background-repeat: repeat; /* Allow the image to repeat to fill the space */
-    background-attachment: fixed; /* Fixed background */
+    background-image: url('https://raw.githubusercontent.com/my-project-aws/surprise/main/hearts.webp'),
+                      url('https://raw.githubusercontent.com/my-project-aws/surprise/main/aishu.webp'); /* Add your custom icon image URL here */
+    background-size: cover, 50px; /* Set the size of your custom icon */
+    background-repeat: no-repeat, repeat; /* Main image does not repeat, custom icon does */
+    background-attachment: fixed, scroll; /* Main image is fixed, custom icon scrolls with the page */
+    background-position: center, left bottom; /* Main image centered, custom icon starts from left bottom */
     color: #fff; /* White text color for better readability */
   }
 
