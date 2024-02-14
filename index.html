@@ -11,7 +11,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #800080;
+    background-image: url('https://github.com/my-project-aws/surprise/blob/main/hearts'); /* Replace with the URL of the uploaded heart pattern image */
+    background-size: cover; /* Cover the entire screen */
+    background-repeat: repeat; /* Allow the image to repeat to fill the space */
+    background-attachment: fixed; /* Fixed background */
+    color: #fff; /* White text color for better readability */
   }
 
   .heart {
@@ -57,15 +61,30 @@
 
   .message {
     position: absolute;
-    font-family: Arial, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* A playful font for Valentine's message */
     text-align: center;
-    color: white;
+    color: white; /* Ensures text is readable on the pattern */
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text for better readability */
+    border-radius: 15px; /* Rounded corners for the text background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    max-width: 80%; /* Ensures the message box is not too wide on larger screens */
+  }
+
+  h1 {
+    font-size: 2.5rem; /* Larger text for the heading */
+    color: #ffcccb; /* Light red color for the heading to stand out */
+    text-shadow: 2px 2px 4px #000000; /* Shadow for the heading text for better readability */
+  }
+
+  p {
+    font-size: 1.5rem; /* Slightly larger text for the paragraph */
+    margin-top: 0.5rem; /* Spacing between heading and paragraph */
   }
 </style>
 </head>
 <body>
 
-<div class="heart"></div>
 <div class="message">
   <h1>Happy Valentine's Day!</h1>
   <p>I hope your day is as amazing as you are!</p>
