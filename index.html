@@ -22,8 +22,10 @@
     left: 10px; /* Align to the left side */
     transform: translateY(-50%); /* Center it vertically */
     z-index: 0; /* Ensure it's behind the message */
-    width: 300px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Makes the image round */
+    width: 500px; /* Adjust width as needed */
+    height: 500px /* Maintain aspect ratio */
+    object-fit: cover;
   }
 
   .message {
@@ -70,7 +72,7 @@
 </head>
 <body>
 
-<img src="https://raw.githubusercontent.com/my-project-aws/surprise/main/aishu.webp" class="personal-image" alt="Personal Image" style="width:300px; height:auto;"> <!-- Personal image with inline styling for width -->
+<img src="https://raw.githubusercontent.com/my-project-aws/surprise/main/aishu.webp" class="personal-image" alt="Personal Image" <!-- Personal image with inline styling for width -->
 
 <div class="message">
   <h1>Happy Valentine's Day!</h1>
