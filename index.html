@@ -8,85 +8,79 @@
   body, html {
     height: 100%;
     margin: 0;
-    background-image: url('https://raw.githubusercontent.com/my-project-aws/surprise/main/aishu.webp'); /* Replace with the URL of your uploaded image */
+    overflow: hidden;
+    background-image: url('https://raw.githubusercontent.com/my-project-aws/surprise/main/aishu.webp'); /* Replace with your image URL */
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
+    background-position: center;
   }
 
   .heart {
     position: absolute;
-    width: 100px;
-    height: 90px;
+    width: 30px; /* Smaller heart size */
+    height: 30px;
+    background: red;
+    border-radius: 15px 15px 0 0;
+    transform: rotate(-45deg);
     animation: beat 1s infinite;
-    transform-origin: center;
-    /* You'll need to manually position each heart using top and left properties */
+    z-index: 1; /* Ensure hearts are below the message */
   }
 
-  .heart:before,
-  .heart:after {
+  .heart::before,
+  .heart::after {
     content: "";
     position: absolute;
-    top: 40%;
-    left: 50%;
-    width: 50px;
-    height: 80px;
+    width: 30px;
+    height: 45px;
     background: red;
-    border-radius: 50px 50px 0 0;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    transform-origin: 0 100%;
+    border-radius: 30px 30px 0 0;
   }
 
-  .heart:after {
-    transform: translate(-50%, -50%) rotate(45deg);
-    transform-origin: 100% 100%;
+  .heart::after {
+    left: 10px;
+    top: -15px;
+  }
+
+  .heart::before {
+    left: -20px;
+    top: -15px;
   }
 
   @keyframes beat {
     0%, 100% {
-      transform: scale(1);
+      transform: scale(1) rotate(-45deg);
     }
     50% {
-      transform: scale(0.9);
+      transform: scale(0.9) rotate(-45deg);
     }
   }
 
+  /* Position your message to the right */
   .message {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%; /* Center vertically */
+    right: 5%; /* 5% from the right edge */
+    transform: translateY(-50%); /* Adjust for exact vertical center */
     font-family: Arial, sans-serif;
     text-align: center;
-    color: white;
-    padding: 2rem;
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 80%;
+    color: white;
+    padding: 1em;
+    border-radius: 0.5em;
+    z-index: 2; /* Ensure the message is above the hearts */
   }
 
-  h1 {
-    font-size: 2.5rem;
-    color: #ffcccb;
-  }
+  /* Add as many hearts as you want with varying delays and positions */
+  /* Position them away from the face using top and left values */
 
-  p {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-  }
 </style>
 </head>
 <body>
 
-<!-- Multiple heart divs for the beating hearts -->
-<div class="heart" style="top: 10%; left: 20%;"></div>
-<div class="heart" style="top: 20%; left: 40%;"></div>
-<div class="heart" style="top: 30%; left: 10%;"></div>
-<div class="heart" style="top: 40%; left: 50%;"></div>
-<div class="heart" style="top: 50%; left: 60%;"></div>
-<!-- Add more hearts as needed -->
+<!-- Add your heart elements here -->
+<div class="heart" style="top: 10%; left: 30%; animation-delay: 0.2s;"></div>
+<div class="heart" style="top: 20%; left: 40%; animation-delay: 0.3s;"></div>
+<!-- ... more heart elements ... -->
 
 <div class="message">
   <h1>Happy Valentine's Day!</h1>
