@@ -9,54 +9,70 @@
     height: 100%;
     margin: 0;
     overflow: hidden;
+  }
+
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     background-image: url('https://raw.githubusercontent.com/my-project-aws/surprise/main/aishu.webp'); /* Replace with your image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    z-index: -1;
   }
 
   .heart {
     position: absolute;
-    width: 30px; /* Smaller heart size */
-    height: 30px;
-    background: red;
-    border-radius: 15px 15px 0 0;
-    transform: rotate(-45deg);
+    width: 100px;
+    height: 90px;
     animation: beat 1s infinite;
-    z-index: 1; /* Ensure hearts are below the message */
+    /* You'll need to manually set top and left for each heart to position them */
   }
 
   .heart::before,
   .heart::after {
     content: "";
     position: absolute;
-    width: 30px;
-    height: 45px;
+    top: 0;
+    width: 50px;
+    height: 80px;
     background: red;
-    border-radius: 30px 30px 0 0;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
   }
 
   .heart::after {
-    left: 10px;
-    top: -15px;
-  }
-
-  .heart::before {
-    left: -20px;
-    top: -15px;
+    left: 50px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
   }
 
   @keyframes beat {
     0%, 100% {
-      transform: scale(1) rotate(-45deg);
+      transform: scale(1);
     }
     50% {
-      transform: scale(0.9) rotate(-45deg);
+      transform: scale(1.1);
     }
   }
 
-  /* Position your message to the right */
-  .message {
+  /* Add as many hearts as you want with varying delays and positions */
+  .heart1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+  }
+
+  .heart2 {
+    top: 50%;
+    left: 40%;
+    animation-delay: 0.5s;
+  }
+    .message {
     position: absolute;
     top: 50%; /* Center vertically */
     right: 5%; /* 5% from the right edge */
@@ -70,16 +86,16 @@
     z-index: 2; /* Ensure the message is above the hearts */
   }
 
-  /* Add as many hearts as you want with varying delays and positions */
-  /* Position them away from the face using top and left values */
-
+  /* ... more heart elements with different positions and delays ... */
 </style>
 </head>
 <body>
 
+<div class="background"></div> <!-- This div is for the background image -->
+
 <!-- Add your heart elements here -->
-<div class="heart" style="top: 10%; left: 30%; animation-delay: 0.2s;"></div>
-<div class="heart" style="top: 20%; left: 40%; animation-delay: 0.3s;"></div>
+<div class="heart heart1"></div>
+<div class="heart heart2"></div>
 <!-- ... more heart elements ... -->
 
 <div class="message">
