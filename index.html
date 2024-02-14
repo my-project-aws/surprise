@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day!</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+
+  .heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    animation: beat .75s infinite cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+
+  .heart::after {
+    left: 50px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+
+  @keyframes beat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+  }
+
+  .message {
+    position: absolute;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<div class="heart"></div>
+<div class="message">
+  <h1>Happy Valentine's Day!</h1>
+  <p>I hope your day is as amazing as you are!</p>
+</div>
+
+</body>
+</html>
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('path_to_your_heart_pattern_image.png'); /* Path to your heart pattern image */
+  background-size: cover; /* Cover the entire screen */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-attachment: fixed; /* Fixed background */
+}
+
+.message {
+  position: absolute;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white; /* White text for better contrast */
+}
