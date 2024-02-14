@@ -8,28 +8,21 @@
   body, html {
     height: 100%;
     margin: 0;
-    overflow: hidden;
-  }
-
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url('https://raw.githubusercontent.com/my-project-aws/surprise/main/aishu.webp'); /* Replace with your image URL */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://raw.githubusercontent.com/my-project-aws/surprise/main/aishu.webp'); /* Replace with the URL of the uploaded heart pattern image */
+    background-size: cover; /* Cover the entire screen */
+    background-repeat: repeat; /* Allow the image to repeat to fill the space */
+    background-attachment: fixed; /* Fixed background */
+    color: #fff; /* White text color for better readability */
   }
 
   .heart {
-    position: absolute;
+    position: relative;
     width: 100px;
     height: 90px;
-    animation: beat 1s infinite;
-    /* You'll need to manually set top and left for each heart to position them */
+    animation: beat .75s infinite cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
 
   .heart::before,
@@ -65,6 +58,9 @@
 
 .message {
   position: absolute;
+  top: 50%; /* Center vertically */
+  right: 5%; /* 5% from the right edge */
+  transform: translateY(-50%);
   font-family: 'Comic Sans MS', cursive, sans-serif;
   text-align: center;
   color: white;
@@ -88,43 +84,19 @@ p {
 }
 
 
-  /* Add as many hearts as you want with varying delays and positions */
-  .heart1 {
-    top: 10%;
-    left: 20%;
-    animation-delay: 0s;
+  h1 {
+    font-size: 2.5rem; /* Larger text for the heading */
+    color: #ffcccb; /* Light red color for the heading to stand out */
+    text-shadow: 2px 2px 4px #000000; /* Shadow for the heading text for better readability */
   }
 
-  .heart2 {
-    top: 50%;
-    left: 40%;
-    animation-delay: 0.5s;
+  p {
+    font-size: 1.5rem; /* Slightly larger text for the paragraph */
+    margin-top: 0.5rem; /* Spacing between heading and paragraph */
   }
-    .message {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    right: 5%; /* 5% from the right edge */
-    transform: translateY(-50%); /* Adjust for exact vertical center */
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 1em;
-    border-radius: 0.5em;
-    z-index: 2; /* Ensure the message is above the hearts */
-  }
-
-  /* ... more heart elements with different positions and delays ... */
 </style>
 </head>
 <body>
-
-<div class="background"></div> <!-- This div is for the background image -->
-
-<!-- Add your heart elements here -->
-<div class="heart heart1"></div>
-<div class="heart heart2"></div>
-<!-- ... more heart elements ... -->
 
 <div class="message">
   <h1>Happy Valentine's Day!</h1>
